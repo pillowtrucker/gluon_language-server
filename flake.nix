@@ -26,6 +26,7 @@
         craneLib.buildPackage {
           src = ./.;
           buildInputs = with pkgs; [
+            git
             pkg-config
             openssl
           ];
