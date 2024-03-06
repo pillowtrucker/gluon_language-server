@@ -267,7 +267,7 @@ fn start_remote() -> ServerHandle {
     use std::process::Stdio;
     use tokio::process::Command;
 
-    let mut child = Command::new("target/debug/gluon_language-server")
+    let mut child = Command::new("target/release/gluon_language-server")
         .stdin(Stdio::piped())
         .stdout(Stdio::piped())
         .spawn()
