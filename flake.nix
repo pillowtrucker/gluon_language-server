@@ -20,10 +20,15 @@
         let
           craneLib = crane.lib.${system}.overrideToolchain
             fenix.packages.${system}.minimal.toolchain;
+          pkgs = nixpkgs.legacyPackages.${system};
         in
 
         craneLib.buildPackage {
           src = ./.;
+          buildInputs = with pkgs; [
+            pkg-config
+            openssl
+          ];
         };
       
       packages.default =
